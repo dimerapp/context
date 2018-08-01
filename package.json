@@ -1,6 +1,6 @@
 {
   "name": "@dimerapp/context",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Context to be passed around dimer low level libraries",
   "main": "index.js",
   "files": [

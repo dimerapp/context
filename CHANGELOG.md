@@ -1,3 +1,13 @@
+<a name="1.0.1"></a>
+## [1.0.1](https://github.com/dimerapp/context/compare/v1.0.0...v1.0.1) (2018-08-01)
+
+
+### Features
+
+* set paths object to context state ([d100c55](https://github.com/dimerapp/context/commit/d100c55))
+
+
+
 <a name="1.0.0"></a>
 # 1.0.0 (2018-08-01)
 
