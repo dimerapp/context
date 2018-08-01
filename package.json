@@ -1,0 +1,53 @@
+{
+  "name": "@dimerapp/context",
+  "version": "1.0.0",
+  "description": "Context to be passed around dimer low level libraries",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "scripts": {
+    "mrm": "mrm --preset=@adonisjs/mrm-preset",
+    "pretest": "npm run lint",
+    "test": "japa",
+    "commit": "git-cz",
+    "lint": "standard"
+  },
+  "keywords": [
+    "dimer"
+  ],
+  "author": "virk",
+  "license": "MIT",
+  "devDependencies": {
+    "@adonisjs/mrm-preset": "^1.0.10",
+    "commitizen": "^2.10.1",
+    "cz-conventional-changelog": "^2.1.0",
+    "japa": "^1.0.6",
+    "japa-cli": "^1.0.1",
+    "mrm": "^1.2.1",
+    "pkg-ok": "^2.2.0",
+    "standard": "^11.0.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "nyc": {
+    "exclude": [
+      "test",
+      "japaFile.js"
+    ]
+  },
+  "dependencies": {
+    "debug": "^3.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dimerapp/context.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dimerapp/context/issues"
+  },
+  "homepage": "https://github.com/dimerapp/context#readme"
+}
