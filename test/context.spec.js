@@ -13,7 +13,14 @@ const Context = require('..')
 test.group('Context', () => {
   test('initiate new context with base path', (assert) => {
     const ctx = new Context(__dirname)
-    assert.deepEqual(ctx.state, { basePath: __dirname })
+    assert.deepEqual(ctx.state, {
+      paths: {
+        basePath: __dirname,
+        distPathRef: 'dist',
+        apiPathRef: '__api',
+        assetsPathRef: '__assets'
+      }
+    })
   })
 
   test('set without name should raise errors', (assert) => {
@@ -31,25 +38,56 @@ test.group('Context', () => {
   test('allow null as value', (assert) => {
     const ctx = new Context(__dirname)
     ctx.set('core', 'foo', null)
-    assert.deepEqual(ctx.state, { basePath: __dirname, foo: null })
+    assert.deepEqual(ctx.state, {
+      paths: {
+        basePath: __dirname,
+        distPathRef: 'dist',
+        apiPathRef: '__api',
+        assetsPathRef: '__assets'
+      },
+      foo: null
+    })
   })
 
   test('allow objects as value', (assert) => {
     const ctx = new Context(__dirname)
     ctx.set('core', 'key', { foo: 'bar' })
-    assert.deepEqual(ctx.state, { basePath: __dirname, key: { foo: 'bar' } })
+    assert.deepEqual(ctx.state, {
+      paths: {
+        basePath: __dirname,
+        distPathRef: 'dist',
+        apiPathRef: '__api',
+        assetsPathRef: '__assets'
+      },
+      key: { foo: 'bar' }
+    })
   })
 
   test('allow array as value', (assert) => {
     const ctx = new Context(__dirname)
     ctx.set('core', 'key', [{ foo: 'bar' }])
-    assert.deepEqual(ctx.state, { basePath: __dirname, key: [{ foo: 'bar' }] })
+    assert.deepEqual(ctx.state, {
+      paths: {
+        basePath: __dirname,
+        distPathRef: 'dist',
+        apiPathRef: '__api',
+        assetsPathRef: '__assets'
+      },
+      key: [{ foo: 'bar' }]
+    })
   })
 
   test('mutating state should not mutate the internal state of context', (assert) => {
     const ctx = new Context(__dirname)
     ctx.state.basePath = 'foo'
-    assert.deepEqual(ctx.state, { basePath: __dirname })
+    assert.deepEqual(ctx.state, {
+      paths: {
+        basePath: __dirname,
+        distPathRef: 'dist',
+        apiPathRef: '__api',
+        assetsPathRef: '__assets'
+      }
+    })
   })
 
   test('raise error when base path is missing', (assert) => {
