@@ -7,6 +7,7 @@
 * file that was distributed with this source code.
 */
 
+const { paths } = require('@dimerapp/utils')
 const debug = require('debug')('dimer:context')
 const { isAbsolute } = require('path')
 
@@ -24,7 +25,7 @@ class Context {
     }
 
     this._internalState = new Map()
-    this.set('core', 'basePath', basePath)
+    this.set('core', 'paths', paths(basePath))
   }
 
   /**

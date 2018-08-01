@@ -40,6 +40,7 @@
     ]
   },
   "dependencies": {
+    "@dimerapp/utils": "^1.0.3",
     "debug": "^3.1.0"
   },
   "repository": {
