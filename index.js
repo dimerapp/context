@@ -19,13 +19,13 @@ const { isAbsolute } = require('path')
  * @param {String} basePath
  */
 class Context {
-  constructor (basePath) {
+  constructor (basePath, distPath) {
     if (!basePath || !isAbsolute(basePath)) {
       throw new Error('Context needs an absolute basePath to start with')
     }
 
     this._internalState = new Map()
-    this.set('core', 'paths', paths(basePath))
+    this.set('core', 'paths', paths(basePath, distPath))
   }
 
   /**
