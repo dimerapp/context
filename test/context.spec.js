@@ -9,6 +9,7 @@
 
 const test = require('japa')
 const Context = require('..')
+const { join } = require('path')
 
 test.group('Context', () => {
   test('initiate new context with base path', (assert) => {
@@ -98,5 +99,10 @@ test.group('Context', () => {
   test('raise error when base path is not absolute', (assert) => {
     const ctx = () => new Context('foo/bar')
     assert.throw(ctx, 'Context needs an absolute basePath to start with')
+  })
+
+  test('define custom dist dir', (assert) => {
+    const ctx = new Context(__dirname, '.')
+    assert.equal(ctx.get('paths').apiPath(), join(__dirname, '__api'))
   })
 })

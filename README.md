@@ -53,6 +53,12 @@ const store = new (require('@dimerapp/datastore'))(ctx)
 ## API
 The following methods are available to read/write to the context.
 
+##### constructor(basePath, [distPath = 'dist'])
+
+```js
+const ctx = new Context(__dirname, 'dist')
+```
+
 #### set(lib, key, value)
 The `lib` option is required for debugging, so that context can log name of the library, which has mutated the state.
 
