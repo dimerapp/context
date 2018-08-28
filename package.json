@@ -19,7 +19,7 @@
   "author": "virk",
   "license": "MIT",
   "devDependencies": {
-    "@adonisjs/mrm-preset": "^1.0.10",
+    "@adonisjs/mrm-preset": "^1.0.11",
     "commitizen": "^2.10.1",
     "cz-conventional-changelog": "^2.1.0",
     "japa": "^1.0.6",
@@ -40,7 +40,7 @@
     ]
   },
   "dependencies": {
-    "@dimerapp/utils": "^1.0.3",
+    "@dimerapp/utils": "^2.0.0",
     "debug": "^3.1.0"
   },
   "repository": {
